@@ -18,3 +18,13 @@ $('#hero').height(window.innerHeight + 'px');
   
   //для Chorme в input type=date вказуємо сьогоднішню дату за замовчуванням
   document.getElementById('date').valueAsDate = new Date();
+  
+  // показуємо стрілку в гору, коли проскролили першу сторінку
+	$(document).scroll(function() {
+		var y = $(this).scrollTop();
+		if (y < $(window).height()) {
+			$('#toTop').css('display', 'none');
+		} else {
+			$('#toTop').css('display', 'block');
+		}
+	});
