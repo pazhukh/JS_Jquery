@@ -41,3 +41,24 @@ $('#hero').height(window.innerHeight + 'px');
 	    mm='0'+mm
 	} 
 	today = dd+'/'+ mm +'/'+yyyy;
+
+
+
+//додаємо різні переклади для Datapicker
+$.datepicker.regional['uk'] = {
+		closeText: 'Закрити',
+		prevText: '&#x3c;Поп',
+		nextText: 'Наст&#x3e;',
+		currentText: 'Сьогодні',
+		monthNames: ['Січень','Лютий','Березень','Квітень','Травень','Червень',
+		'Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],
+		monthNamesShort: ['Січ','Лют','Бер','Кві','Тра','Чер',
+		'Лип','Сер','Вер','Жов','Лис','Гру'],
+		dayNames: ['неділя','понеділок','вівторок','середа','четвер','пятниця','субота'],
+		dayNamesShort: ['ндл','пнд','втр','срд','чтв','птн','сбт'],
+		dayNamesMin: ['Нд','Пн','Вт','Ср','Чт','Пт','Сб'],
+		dateFormat: 'dd.mm.yy',
+		firstDay: 1,
+		isRTL: false
+	};
+	$.datepicker.setDefaults($.datepicker.regional['uk']);
