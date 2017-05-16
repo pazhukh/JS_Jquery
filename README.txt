@@ -41,6 +41,9 @@ $('#hero').height(window.innerHeight + 'px');
 	    mm='0'+mm
 	} 
 	today = dd+'/'+ mm +'/'+yyyy;
+	
+//current year by Jquery
+$("#year").text( (new Date).getFullYear() );
 
 
 
