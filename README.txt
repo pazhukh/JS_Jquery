@@ -65,3 +65,23 @@ $.datepicker.regional['uk'] = {
 		isRTL: false
 	};
 	$.datepicker.setDefaults($.datepicker.regional['uk']);
+	
+// fullpage.js якщо є частина на екнані, яка в нього не влазить, то при hover - відключається плагін, і можна прокрутити
+$('.asideFull').hover(
+		function() {
+
+			var elm = $(this);
+			var elmHeight = elm.height();
+			elm.scrollTop(elm.get(0).scrollHeight);
+			var scrollHeight = elm.scrollTop() + elmHeight;
+			elm.scrollTop(0);
+			console.log(scrollHeight);
+
+			if(scrollHeight > elmHeight){
+         $.fn.fullpage.setMouseWheelScrolling(false); // якщо секція має overflow-
+         console.log('hover', $(this).height())}//відключаємо плагін
+
+     }, function(){
+     	 $.fn.fullpage.setMouseWheelScrolling(true); //включаємо плагін
+     	 console.log('leave');
+     	});
