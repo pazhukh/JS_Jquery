@@ -69,19 +69,11 @@ $.datepicker.regional['uk'] = {
 // fullpage.js якщо є частина на екнані, яка в нього не влазить, то при hover - відключається плагін, і можна прокрутити
 $('.asideFull').hover(
 		function(){
-			var elm = $(this);
-
-			//збрегіаємо місце прокрутки елемента
-			var elmScroll = elm.scrollTop();
-			//висота елемента
-			var elmHeight = elm.height();
-			//скролим до низу елемент і додаємо до його значення до висоти елемента
-			elm.scrollTop(elm.get(0).scrollHeight);
-			var scrollHeight = elm.scrollTop() + elmHeight;
-			//повертаємо скрол на початкове значення
-			elm.scrollTop(elmScroll);
-
-			if(scrollHeight > elmHeight){
+			//висота всього елементу
+			var fullHeight = this.scrollHeight;
+			//висота видимої області елементу
+			var visbleHeight = this.offsetHeight;
+			if(fullHeight > visbleHeight){
          		$.fn.fullpage.setMouseWheelScrolling(false); // якщо секція має overflow-відключаємо плагін
          	}
          }, function(){
