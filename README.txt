@@ -80,3 +80,15 @@ $('.asideFull').hover(
      	 $.fn.fullpage.setMouseWheelScrolling(true); //включаємо плагін після забирання курсору з елемента
      	}
     );
+    
+//лічильник цифер до 100
+var num = document.getElementById('num');
+	var a = 0;
+	var myNum = setInterval(number, 0.1);
+	function number(){
+		a++;
+		num.innerText = a;
+		if(a==100){
+			clearInterval(myNum);
+		}
+	}
