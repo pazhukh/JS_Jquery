@@ -110,3 +110,19 @@ $("form").submit(function(e) {
 	        }
 	    });  return true;
 	});
+
+
+$(window).scroll(function(){
+		var window_top = $(window).scrollTop() ; 
+		var div_top = $('.nameClass').offset().top;
+		if (window_top > div_top) {
+			$('header').addClass('addClass');
+		} else {
+			$('header').removeClass('addClass');
+		};
+	});
+/* 
+.nameClass - який елемент має доторкнтутися
+до верху екрану, щоб зробилися зміни з header
+header - в який елемент будемо додавати класс
+.addClass - клас, який будемо додавати до елемента
