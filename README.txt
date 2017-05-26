@@ -92,3 +92,6 @@ var num = document.getElementById('num');
 			clearInterval(myNum);
 		}
 	}
+
+//slick slider включаємо, якщо стандартним способом вибиває помилку
+$('.your-class').not('.slick-initialized').slick({})
