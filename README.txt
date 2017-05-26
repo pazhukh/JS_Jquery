@@ -95,3 +95,18 @@ var num = document.getElementById('num');
 
 //slick slider включаємо, якщо стандартним способом вибиває помилку
 $('.your-class').not('.slick-initialized').slick({})
+
+
+//функція яка викликає alert в браузерах, в яких не підтримується required атрибут (при відправки форми)
+$("form").submit(function(e) {
+    	var ref = $(this).find("[required]");
+	    $(ref).each(function(){
+	        if ( $(this).val() == '' )
+	        {
+	            alert("Required field should not be blank.");
+	            $(this).focus();
+	            e.preventDefault();
+	            return false;
+	        }
+	    });  return true;
+	});
