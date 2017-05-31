@@ -126,3 +126,52 @@ $(window).scroll(function(){
 до верху екрану, щоб зробилися зміни з header
 header - в який елемент будемо додавати класс
 .addClass - клас, який будемо додавати до елемента
+
+//progress bar on slick slider
+	var elem = $('#myBar');   
+	var width = 1;
+	var id = setInterval(progress, 40);
+	function progress() {
+		if (width >= 100) {
+			width = 0;
+			elem.css('width', width + '%');
+
+			clearInterval(id);
+			setTimeout(function(){
+				id = setInterval(progress, 40);
+			}, 1000)
+
+		} else {
+			width++;
+			elem.css('width', width + '%');
+		}
+	}
+	progress();
+
+	$('.left-arrow, .right-arrow, .slick-arrow').on('click', function(){
+		width = 0;
+		elem.css('width', width + '%');
+		clearInterval(id);
+		id = setInterval(progress, 50);
+			progress();	
+	})
+//html
+<div id="myProgress">
+		<div id="myBar"></div>
+	</div>
+//css
+#myProgress{
+		height: 10px;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		border: 1px solid black;
+		background-color: red;
+		z-index: 50;
+	}
+	#myBar{
+		height: 100%;
+		width: 0;
+		position: relative;
+		background-color: black;
+	}
