@@ -175,3 +175,32 @@ header - в який елемент будемо додавати класс
 		position: relative;
 		background-color: black;
 	}
+
+
+//додаємо або забираємо клас в залежності в яку сторону скролим
+//мій метод 
+var lastScroll = 0;
+	var currentScroll = 0;
+	$(window).scroll(function(){
+		currentScroll = $('body').scrollTop();
+		console.log('current' + currentScroll);
+		console.log('last position' + lastScroll);
+		if($('body').scrollTop() > 500){
+
+			if(lastScroll < currentScroll){
+				$('.mainHeader').addClass('small');
+			} else{
+				$('.mainHeader').removeClass('small')
+			}
+			lastScroll = currentScroll;
+		}
+	})
+	
+//stackoverflow метод
+	$(window).on( 'DOMMouseScroll mousewheel', function(event){
+		if( event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ){
+			$('.mainHeader').addClass('small');
+		} else {
+			$('.mainHeader').removeClass('small')
+		}
+	});
