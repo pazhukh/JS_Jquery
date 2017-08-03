@@ -204,3 +204,15 @@ var lastScroll = 0;
 			$('.mainHeader').removeClass('small')
 		}
 	});
+
+
+
+*****************************************************************************************************************
+при кліку на зображеня - відкриває пошту для відправки листа (замінник mailto:)
+	$('.mailImg').on('click',function(event){
+		event.preventDefault();
+		var mail1 = 'info.',
+		mail2 = 'w3@',
+		mail3 = 'biospecimen-japan.com';
+		window.location.href = 'mailto:'+mail1+mail2+mail3;
+	});
