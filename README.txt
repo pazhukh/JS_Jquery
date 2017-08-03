@@ -1,6 +1,8 @@
 # JS_Jquery
 // неробить конфліктів jquery
-var $= jQuery.noConflict();
+1. var $= jQuery.noConflict();
+2. jQuery(function ($) {}
+
 
 //heigh 100vh for IOS
 $('#hero').height(window.innerHeight + 'px');
