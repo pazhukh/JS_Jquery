@@ -3,9 +3,12 @@
 1. var $= jQuery.noConflict();
 2. jQuery(function ($) {}
 
+****************************************************************************
 
 //heigh 100vh for IOS
 $('#hero').height(window.innerHeight + 'px');
+
+*********************************************************************************
 
 //add smooth scrolling, як параметри в душках вказуємо ті ссилки, якім треба додати ефект скролінгу
 	$(".mainNav a, .heroTextWrap a, .gallerytSignUpFit a, #toTop").on('click', function(event) {
@@ -17,9 +20,13 @@ $('#hero').height(window.innerHeight + 'px');
 			}, 900);
 		}
 	});
+	
+  *************************************************************
   
   //для Chorme в input type=date вказуємо сьогоднішню дату за замовчуванням
   document.getElementById('date').valueAsDate = new Date();
+  
+  *******************************************************************************
   
   // показуємо стрілку в гору, коли проскролили першу сторінку
 	$(document).scroll(function() {
@@ -30,6 +37,8 @@ $('#hero').height(window.innerHeight + 'px');
 			$('#toTop').css('display', 'block');
 		}
 	});
+	
+**********************************************************************
 
 //get date today
 	var today = new Date();
@@ -47,7 +56,7 @@ $('#hero').height(window.innerHeight + 'px');
 //current year by Jquery
 $("#year").text( (new Date).getFullYear() );
 
-
+*********************************************************************************
 
 //додаємо різні переклади для Datapicker
 $.datepicker.regional['uk'] = {
@@ -68,6 +77,8 @@ $.datepicker.regional['uk'] = {
 	};
 	$.datepicker.setDefaults($.datepicker.regional['uk']);
 	
+*********************************************************************************************	
+	
 // fullpage.js якщо є частина на екнані, яка в нього не влазить, то при hover - відключається плагін, і можна прокрутити
 $('.asideFull').hover(
 		function(){
@@ -83,21 +94,45 @@ $('.asideFull').hover(
      	}
     );
     
-//лічильник цифер до 100
-var num = document.getElementById('num');
-	var a = 0;
-	var myNum = setInterval(number, 0.1);
-	function number(){
-		a++;
-		num.innerText = a;
-		if(a==100){
-			clearInterval(myNum);
+    
+ *********************************************************************   
+ 
+ 
+//лічильник цифер (дів має мати клас .counter-value та атрибут data-count з числом до якого має рахувати лічильник)
+//<span class="counter-value" data-count="5">0</span>
+function counter(){
+		var oTop = $('.integer').offset().top - window.innerHeight;
+		if (a == 0 && $(window).scrollTop() > oTop) {
+			$('.counter-value').each(function() {
+				var $this = $(this),
+				countTo = $this.attr('data-count');
+				$({
+					countNum: $this.text()
+				}).animate({
+					countNum: countTo
+				},
+
+				{
+					duration: 2000,
+					easing: 'swing',
+					step: function() {
+						$this.text(Math.floor(this.countNum));
+					},
+					complete: function() {
+						$this.text(this.countNum);
+					}
+				});
+			});
+			a = 1;
 		}
 	}
+	
+*****************************************************
 
 //slick slider включаємо, якщо стандартним способом вибиває помилку
 $('.your-class').not('.slick-initialized').slick({})
 
+***************************************************************
 
 //функція яка викликає alert в браузерах, в яких не підтримується required атрибут (при відправки форми)
 $("form").submit(function(e) {
@@ -112,7 +147,8 @@ $("form").submit(function(e) {
 	        }
 	    });  return true;
 	});
-
+	
+**********************************************************
 
 $(window).scroll(function(){
 		var window_top = $(window).scrollTop() ; 
@@ -128,6 +164,8 @@ $(window).scroll(function(){
 до верху екрану, щоб зробилися зміни з header
 header - в який елемент будемо додавати класс
 .addClass - клас, який будемо додавати до елемента
+
+**********************************************************************************
 
 //progress bar on slick slider
 	var elem = $('#myBar');   
@@ -178,6 +216,7 @@ header - в який елемент будемо додавати класс
 		background-color: black;
 	}
 
+**************************************************
 
 //додаємо або забираємо клас в залежності в яку сторону скролим
 //мій метод 
