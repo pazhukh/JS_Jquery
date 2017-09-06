@@ -257,3 +257,7 @@ var lastScroll = 0;
 		mail3 = 'biospecimen-japan.com';
 		window.location.href = 'mailto:'+mail1+mail2+mail3;
 	});
+
+****************************************************************************************************************
+//плагін, який даєм можливість вибирати коди країн select (в форму вставляється)
+http://www.jqueryscript.net/form/jQuery-International-Telephone-Input-With-Flags-Dial-Codes.html
