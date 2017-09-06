@@ -267,3 +267,14 @@ http://www.jqueryscript.net/form/jQuery-International-Telephone-Input-With-Flags
 
 //задавати кастомний текст помилки на required атрибут
 <input type="tel" placeholder="Phone:" id="tel" name="phone" required pattern=".{6,}" required oninvalid="setCustomValidity('Minimum length is 6 characters')"  oninput="setCustomValidity('')">
+
+****************************************************************************************************************
+
+//якщо каптча не відмічена - форму не відправляти
+var captchResponse = $('#g-recaptcha-response').val();
+if(captchResponse.length == 0 ){
+			$('.captcha-err').fadeIn();
+			return false;
+		} else {
+			return true;
+		}
