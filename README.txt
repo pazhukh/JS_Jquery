@@ -259,5 +259,11 @@ var lastScroll = 0;
 	});
 
 ****************************************************************************************************************
+
 //плагін, який даєм можливість вибирати коди країн select (в форму вставляється)
 http://www.jqueryscript.net/form/jQuery-International-Telephone-Input-With-Flags-Dial-Codes.html
+
+****************************************************************************************************************
+
+//задавати кастомний текст помилки на required атрибут
+<input type="tel" placeholder="Phone:" id="tel" name="phone" required pattern=".{6,}" required oninvalid="setCustomValidity('Minimum length is 6 characters')"  oninput="setCustomValidity('')">
