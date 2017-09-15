@@ -278,3 +278,18 @@ if(captchResponse.length == 0 ){
 		} else {
 			return true;
 		}
+
+
+*******************************************************************************************************************
+
+//parallax
+$(window).scroll(function() {
+
+	var st = $(this).scrollTop() /10;
+
+	$(".object").css({
+		"transform" : "translate3d(0px, " + st  + "%, .01px)",
+		"-webkit-transform" : "translate3d(0px, " + st  + "%, .01px)"
+	});
+
+});
