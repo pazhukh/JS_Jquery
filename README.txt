@@ -150,20 +150,29 @@ $("form").submit(function(e) {
 	
 **********************************************************
 
-$(window).scroll(function(){
-		var window_top = $(window).scrollTop() ; 
-		var div_top = $('.nameClass').offset().top;
-		if (window_top > div_top) {
-			$('header').addClass('addClass');
+//робиро фіксацію навігації, після проскролення його (додаємо клас active)
+var nav = $('.navigation');
+	$(document).scroll(function(){
+		fixedNav();
+	})
+
+	$(window).resize(function(){
+		fixedNav();
+	})
+
+	fixedNav();
+	function fixedNav(){
+		if($(window).width() > 767){
+			var navHeight = nav.height();
+			if($(this).scrollTop() > navHeight){
+				nav.addClass('active');
+			} else {
+				nav.removeClass('active');
+			}
 		} else {
-			$('header').removeClass('addClass');
-		};
-	});
-/* 
-.nameClass - який елемент має доторкнтутися
-до верху екрану, щоб зробилися зміни з header
-header - в який елемент будемо додавати класс
-.addClass - клас, який будемо додавати до елемента
+			nav.removeClass('active');
+		}
+	}
 
 **********************************************************************************
 
