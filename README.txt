@@ -37,7 +37,11 @@ $('#hero').height(window.innerHeight + 'px');
 			$('#toTop').css('display', 'block');
 		}
 	});
-	
+
+//smoose scroll to top
+element.on('click', function(){
+		$('body, html').animate({scrollTop: 0}, 300);
+	});
 **********************************************************************
 
 //get date today
