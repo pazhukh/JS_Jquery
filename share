@@ -1,0 +1,8 @@
+//при натиску на посилання - відкривається окреме вікно // обовязкова змінна shareType (facebook, google-plus, pinterest...) 
+$('element').on('click', function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		var link = $(this).attr('href');
+		var shareType = $(this).attr('data-csshare-type');
+		window.open(link, shareType, 'toolbar=0,status=0,width=626,height=436');
+	})
