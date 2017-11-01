@@ -306,3 +306,16 @@ $(window).scroll(function() {
 	});
 
 });
+
+**********************************************************************************************************************
+
+//play/pause video html5
+var videoWr = $("#video-wr");
+	var myVideo = document.getElementById("video"); 
+	videoWr.on('click',function(){
+		if(myVideo.paused){
+			myVideo.play()
+		} else{
+			myVideo.pause();
+		}
+	})
