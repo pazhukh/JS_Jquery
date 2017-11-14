@@ -236,7 +236,7 @@ var nav = $('.navigation');
 var lastScroll = 0;
 	var currentScroll = 0;
 	$(window).scroll(function(){
-		currentScroll = $('body').scrollTop();
+		currentScroll = $(this).scrollTop();
 		console.log('current' + currentScroll);
 		console.log('last position' + lastScroll);
 		if($('body').scrollTop() > 500){
