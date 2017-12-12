@@ -1,3 +1,20 @@
+//кліки за межі елементу
+function clickOutside(e){
+		if(!$(e.target).closest('.ourDiv').length){
+			//do magic
+		}
+	}
+
+****************************************************************************
+
+//посилання на попередню сторінку
+$('.link').on('click', function(e){
+			parent.history.back();
+			return false;
+		});
+
+****************************************************************************
+
 # JS_Jquery
 // неробить конфліктів jquery
 1. var $= jQuery.noConflict();
