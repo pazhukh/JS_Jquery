@@ -1,9 +1,12 @@
 //кліки за межі елементу
-function clickOutside(e){
-		if(!$(e.target).closest('.ourDiv').length){
-			//do magic
-		}
+function closeMenuOutMenuClick(e){
+	if(!$(e.target).closest('.menu-aside').length && !$(e.target).closest('.products-button-inner, .open-menu span').length && menuAside.hasClass('active')){
+		sandwich.removeClass('active');
+		menuAside.removeClass('active');
 	}
+	
+	//close menu when click outside
+	$(window).on('click', closeMenuOutMenuClick);
 
 ****************************************************************************
 
