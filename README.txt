@@ -336,3 +336,19 @@ var videoWr = $("#video-wr");
 			myVideo.pause();
 		}
 	})
+	
+**********************************************************************************************************************
+	
+//change image 
+	function changeImg(){
+		var img = El.attr('data-image');
+		var imgSmall = El.attr('data-image-small');
+		var windowWidth = $(window).width();
+		
+		if(windowWidth>995){
+			El.css('background-image', 'url(' + img + ')');
+		} else {
+			El.css('background-image', 'url(' + imgSmall + ')');
+		}
+	}
+	changeImg();
