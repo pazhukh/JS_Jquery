@@ -1,3 +1,11 @@
+input type file
+//get file name
+var fileName = $(this)[0].files[0].name;
+var fileSize = $(this)[0].files[0].size;
+var fileType = $(this)[0].files[0].type;
+
+****************************************************************************
+
 //кліки за межі елементу
 function closeMenuOutMenuClick(e){
 	if(!$(e.target).closest('.menu-aside').length && !$(e.target).closest('.products-button-inner, .open-menu span').length && menuAside.hasClass('active')){
