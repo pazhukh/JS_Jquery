@@ -41,7 +41,31 @@ $('#hero').height(window.innerHeight + 'px');
 		}
 	});
 	
-  *************************************************************
+  **************************************************************************************************************************
+  
+  //if you came to page with anchor do smooth scrolling to section
+		if (window.location.hash) {
+			var wv = $(window).width();
+			var fromTop = $(window.location.hash).offset().top
+			var scrollFromTop;
+			if(wv > 767){
+				scrollFromTop = fromTop - 70;
+			} else{
+				scrollFromTop = fromTop - 57;
+			}
+
+			setTimeout(function() {
+				$('html, body').scrollTop(0).css('opacity', '1');
+				$('html, body').animate({
+					scrollTop: scrollFromTop
+				}, 900)
+			}, 0);
+		} else{
+			$('html, body').css('opacity', '1');
+		}
+  
+   **************************************************************************************************************************
+  
   
   //для Chorme в input type=date вказуємо сьогоднішню дату за замовчуванням
   document.getElementById('date').valueAsDate = new Date();
