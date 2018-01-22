@@ -4,6 +4,30 @@ var fileName = $(this)[0].files[0].name;
 var fileSize = $(this)[0].files[0].size;
 var fileType = $(this)[0].files[0].type;
 
+//get all files name
+		$("input[type='file']").on('change', function (){
+
+
+			var files = $(this).prop("files");
+			// var names = $.map(files, function(val) { return val.name; });
+			// $('.upload-label').text(names);
+
+			
+			var filesName;
+			$('.file-names').text('');
+			for (var i = 0; i < files.length; i++){
+				if( i == files.length - 1){
+					$('.file-names').append(files[i].name)
+				} else{
+					$('.file-names').append(files[i].name + ', ');
+				}
+			}
+			$('.upload-label').text('Upload MORE photos');
+			
+		});
+
+
+
 ****************************************************************************
 
 //кліки за межі елементу
