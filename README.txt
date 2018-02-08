@@ -1,3 +1,9 @@
+//Кнопка назад
+//https://www.w3schools.com/jsref/met_his_back.asp
+<input type="button" value="Назад" onclick="history.back(-1)">
+
+****************************************************************************
+
 input type file
 //get file name
 var fileName = $(this)[0].files[0].name;
