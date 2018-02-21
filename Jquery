@@ -190,9 +190,7 @@ $('.asideFull').hover(
  
 //лічильник цифер (дів має мати клас .counter-value та атрибут data-count з числом до якого має рахувати лічильник)
 //<span class="counter-value" data-count="5">0</span>
-$(document).scroll(function(){
-			counter();
-		})
+
 function counter(){
 		var oTop = $('.integer').offset().top - window.innerHeight;
 		if ($(window).scrollTop() > oTop) {
@@ -218,7 +216,10 @@ function counter(){
 			});
 		}
 	}
-	
+
+counter();
+$(window).scroll(counter);
+
 *****************************************************
 
 //slick slider включаємо, якщо стандартним способом вибиває помилку
