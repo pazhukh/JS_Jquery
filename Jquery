@@ -190,9 +190,12 @@ $('.asideFull').hover(
  
 //лічильник цифер (дів має мати клас .counter-value та атрибут data-count з числом до якого має рахувати лічильник)
 //<span class="counter-value" data-count="5">0</span>
+$(document).scroll(function(){
+			counter();
+		})
 function counter(){
 		var oTop = $('.integer').offset().top - window.innerHeight;
-		if (a == 0 && $(window).scrollTop() > oTop) {
+		if ($(window).scrollTop() > oTop) {
 			$('.counter-value').each(function() {
 				var $this = $(this),
 				countTo = $this.attr('data-count');
@@ -213,7 +216,6 @@ function counter(){
 					}
 				});
 			});
-			a = 1;
 		}
 	}
 	
