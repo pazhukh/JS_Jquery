@@ -1,3 +1,29 @@
+//друкуємо текст на фронтенді
+//element should have data-title="our text"
+		var element = $('.main-title');
+		var textToAdd = element.data('title');
+		var count = 0;
+		var fulltext = '';
+		var addText;
+
+		setTimeout(function(){ 
+			 addText = setInterval(function(){ 
+				adedText(); 
+			}, 100);
+		}, 2000);
+				
+		function adedText(){
+			var text = textToAdd.charAt(count);
+			fulltext += text;
+			element.html(fulltext);
+			count ++;
+			if(element.text().length == textToAdd.length){
+				clearInterval(addText);
+			}
+		}
+	
+**************************************************************************************************
+
 //вертає рядок до першого знака @
 string.split("@")[0]
 
