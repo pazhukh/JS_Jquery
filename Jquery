@@ -8,6 +8,30 @@ string.split("@")[0]
 
 ****************************************************************************
 
+//при кліку на елемент з підменю toggle підменю (Wordpress)
+var hasChild = $('.menu-item-has-children > a');
+//toggle sub menu
+	hasChild.on('click', function(e){
+		e.preventDefault();
+		if($(window).width() > 991){
+			var target = $(this).closest('.menu-item-has-children');
+			if(!target.hasClass('active')){
+				$('.sub-menu').slideUp(100);
+				$('.menu-item-has-children').removeClass('active');
+
+				target.addClass('active');
+				$(this).next().slideDown(100);
+			} else{
+				target.removeClass('active');
+				$(this).next().slideUp(100);
+			}
+		} else {
+			$(this).next().slideToggle(100);
+		}
+	})
+	
+****************************************************************************
+
 input type file
 //get file name
 var fileName = $(this)[0].files[0].name;
