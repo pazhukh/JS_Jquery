@@ -29,7 +29,15 @@ var hasChild = $('.menu-item-has-children > a');
 			$(this).next().slideToggle(100);
 		}
 	})
-	
+
+		//hide submenu on click out
+		function closeSubMenuOutMenuClick(e){
+			if(!$(e.target).closest('.menu-item-has-children.active').length && $(window).width()>991){
+				$('.sub-menu').slideUp(100);
+				$('.menu-item-has-children').removeClass('active');
+			}
+		}
+		$(window).on('click', closeSubMenuOutMenuClick);
 ****************************************************************************
 
 input type file
