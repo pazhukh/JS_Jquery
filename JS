@@ -1,0 +1,2 @@
+//скорочений if/else
+Math.random() < 0.5 ? 'heads' : 'tails';
