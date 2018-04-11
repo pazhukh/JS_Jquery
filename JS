@@ -1,2 +1,5 @@
 //скорочений if/else
 Math.random() < 0.5 ? 'heads' : 'tails';
+
+//повертає тип аргумента
+typeof 'Hello world'
