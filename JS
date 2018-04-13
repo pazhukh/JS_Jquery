@@ -50,10 +50,8 @@ for(var i = 0; i<elements.length; i++){
 .classList.toggle('active')
 
 
-document.body.onscroll= function(){
-      console.log(window.pageYOffset);
-}
-
+element.style.backgoundColor = 'black';
+element.style.cssText = 'background-color: black; color: white;';
 
 //додаємо клас, коли елемент стукнувся гори екрану і забираємо коли навпаки
 var stickyEl = document.getElementById('sticky');
