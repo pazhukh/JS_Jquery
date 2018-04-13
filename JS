@@ -68,3 +68,20 @@ function addStycky(){
 document.body.onscroll= function(){
 	addStycky();
 }
+
+//додаємо клас, якщо елемент в екрані, якщо ні забираємо
+var stickyEl = document.getElementById('sticky');
+var stickyElFromTop = stickyEl.offsetTop;
+function addStycky(){
+	var elementInBottomOfWindow = window.pageYOffset + window.innerHeight;
+	var scrollFromTop = window.pageYOffset;
+
+	if(scrollFromTop >= stickyElFromTop || elementInBottomOfWindow <= stickyElFromTop) {
+		stickyEl.classList.remove('sticky');
+	} else {
+		stickyEl.classList.add('sticky');
+	}
+}
+document.body.onscroll= function(){
+	addStycky();
+}
