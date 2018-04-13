@@ -71,8 +71,8 @@ document.body.onscroll= function(){
 
 //додаємо клас, якщо елемент в екрані, якщо ні забираємо
 var stickyEl = document.getElementById('sticky');
-var stickyElFromTop = stickyEl.offsetTop;
 function addStycky(){
+	var stickyElFromTop = stickyEl.offsetTop;
 	var elementInBottomOfWindow = window.pageYOffset + window.innerHeight;
 	var scrollFromTop = window.pageYOffset;
 
