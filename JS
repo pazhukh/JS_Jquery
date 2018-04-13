@@ -40,3 +40,6 @@ for(var i = 0; i<elements.length; i++){
 				console.log(this);
 			})
 		}
+
+.nextSibling - наступний елемент
+.previousSibling - попередній елемент
