@@ -85,7 +85,9 @@ document.body.onscroll= function(){
 
 
 /////створюємо елемент
-
+var span = document.createElement('span');
+var textNode = document.createTextNode('some text here');
+span.appendChild(textNode);
 
 //записуємо текст в елемент (ноду)
 Node.innerText = '';
