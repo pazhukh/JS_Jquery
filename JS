@@ -104,3 +104,19 @@ span.appendChild(textNode);
 Node.innerText = '';
 Node.innerHTML = '';
 Node.textContent = '';
+
+
+***************
+при горизонтальному скролі таблиці - скролити інші таблиці
+var card = document.getElementsByClassName('card__body-inner');
+for(var i = 0; i < card.length; i++){
+    card[i].addEventListener('scroll', function(){
+	scrollLeftAllTables(this.scrollLeft);
+    })
+}
+
+function scrollLeftAllTables(scrLeft){
+    for(var i = 0; i < card.length; i++){
+       card[i].scrollLeft = scrLeft;
+    }
+}
